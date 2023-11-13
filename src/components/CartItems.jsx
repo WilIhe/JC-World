@@ -24,7 +24,7 @@ const CartItems = () => {
                 <Box flex={2} sx={{bgcolor: 'red'}}>
                     <Grid container spacing={2}>
                         //This map needs to be conditionally rendered
-                        {keyChainAdded === true ? handleChange :  setSharedState(updatedSharedState) }
+                        {/* {keyChainAdded === true ? handleChange :  setSharedState(updatedSharedState) } */}
                         {keyChainList.map((item, index) =>(
                             <Grid key={index} item xs={12} sm={12} md={12}>
                                 <Paper>
