@@ -45,7 +45,7 @@ const FilterAndSearch = () =>
                 </Grid>
                 <Grid item>
                     <Box>
-                        <Button variant='contained' sx={{bgcolor:'pink'}} size='large'>
+                        <Button variant='contained' sx={{bgcolor:'blue'}} size='large'>
                             <Typography>
                                 Glitter
                             </Typography>
