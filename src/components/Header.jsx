@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { ShoppingCart } from "@mui/icons-material";
 import { AppBar, Box, Toolbar, Typography, Badge, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useSharedState } from "./SharedStatesContext";
+// import { useSharedState } from "./SharedStatesContext";
 
 
 const StyledToolbar = styled(Toolbar)({
@@ -21,8 +21,8 @@ const StyledImage = styled('img')({
 
 const Header = () => {
 
-    const { sharedState } = useSharedState();
-    const cartCount = sharedState.cartCount;
+    // const { sharedState } = useSharedState();
+    // const cartCount = sharedState.cartCount;
 
     return (
     <Box sx={{flexGrow: '1'}}>
@@ -35,7 +35,7 @@ const Header = () => {
                     </Typography>
                 </Box>
                 <IconButton component={Link} to='/CartPage'>
-                    <Badge badgeContent={cartCount}>
+                    <Badge badgeContent={10}>
                         <ShoppingCart sx={{color:'purple'}} />
                     </Badge>
                 </IconButton>

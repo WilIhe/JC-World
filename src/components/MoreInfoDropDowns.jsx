@@ -1,53 +1,10 @@
 import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 import Keychain from "./Keychain";
 import { useState} from "react";
-import { useSharedState } from "./SharedStatesContext";
 
 
 const MoreInfoDropDowns = () => {
-    const { sharedState, setSharedState } = useSharedState()
-    const [ count, setCount ] = useState(0);
 
-
-    const handleChangeGlitter = (event) => {
-        setSelectedGlitter(event.target.value);
-        setSharedState({ ...sharedState, selectedGlitter: event.target.value });
-      };
-    
-      const handleChangeLetter = (event) => {
-        setSelectedLetter(event.target.value);
-        setSharedState({ ...sharedState, selectedLetter: event.target.value });
-      };
-    
-      const handleChangeCrystalPaint = (event) => {
-        setSelectedCrystalPaint(event.target.value);
-        setSharedState({ ...sharedState, selectedCrystalPaint: event.target.value });
-      };
-    
-      const handleChangeCloudFall = (event) => {
-        setSelectedCloudFall(event.target.value);
-        setSharedState({ ...sharedState, selectedCloudFall: event.target.value });
-      };
-
-    const [selectedGlitter, setSelectedGlitter] = useState(sharedState.selectedGlitter);
-    // const handleChangeGlitter = (event) => {
-    //     setSelectedGlitter(event.target.value)
-    // };
-
-    const [selectedLetter, setSelectedLetter] = useState(sharedState.selectedLetter);
-    // const handleChangeLetter = (event) => {
-    //     setSelectedLetter(event.target.value);
-    // }
-
-    const [selectedCrystalPaint, setSelectedCrystalPaint] = useState(sharedState.selectedCrystalPaint);
-    // const handleChangeCrystalPaint = (event) => {
-    //     setselectedCrystalPaint(event.target.value);
-    // }
-
-    const [selectedCloudFall, setSelectedCloudFall] = useState(sharedState.selectedCloudFall);
-    // const handleChangeCloudFall = (event) => {
-    //     setselectedCloudFall(event.target.value);
-    // }
     return(
         <Container>
             <FormControl fullWidth>
@@ -55,8 +12,8 @@ const MoreInfoDropDowns = () => {
                 <Select
                     labelId='Glitter-label'
                     id='Glitter-select'
-                    value={selectedGlitter}
-                    onChange={handleChangeGlitter}
+                    // value={selectedGlitter}
+                    // onChange={handleChangeGlitter}
                 >
                 {/* <Grid container> */}
                     {Keychain.glitter.map((glitter) =>
@@ -81,8 +38,8 @@ const MoreInfoDropDowns = () => {
                     labelId='Letter-label'
                     id='Letter-select'
                     label='Letter'
-                    value={selectedLetter}
-                    onChange={handleChangeLetter}
+                    // value={selectedLetter}
+                    // onChange={handleChangeLetter}
                 >
                 {/* <Grid container> */}
                     {Keychain.letter.map((letter) =>
@@ -103,8 +60,8 @@ const MoreInfoDropDowns = () => {
                     labelId='CrystalPaint-label'
                     id='CrystalPaint-select'
                     label='CrystalPaint'
-                    value={selectedCrystalPaint}
-                    onChange={handleChangeCrystalPaint}
+                    // value={selectedCrystalPaint}
+                    // onChange={handleChangeCrystalPaint}
                 >
                 {/* <Grid container> */}
                     {Keychain.crystals_and_paint.map((CrystalPaint) =>
@@ -129,8 +86,8 @@ const MoreInfoDropDowns = () => {
                     labelId='CloudFall-label'
                     id='CloudFall-select'
                     label='CloudFall'
-                    value={selectedCloudFall}
-                    onChange={handleChangeCloudFall}
+                    // value={selectedCloudFall}
+                    // onChange={handleChangeCloudFall}
                 >
                 {/* <Grid container> */}
                     {Keychain.cloud_fall_glitter.map((CloudFall) =>
