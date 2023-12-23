@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    glitter: '',
+    glitterName: '',
 }
 
 const glitterSlice = createSlice({
@@ -12,7 +12,7 @@ const glitterSlice = createSlice({
             state.glitter = action.payload
         }
     }
-})
+}) 
 
 export default glitterSlice.reducer
 export const { selectedGlitter } = glitterSlice.actions
