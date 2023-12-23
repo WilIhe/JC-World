@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectedGlitter } from "./glitterSlice";
-import { Container, FormControl, InputLabel, MenuItem, Typography } from "@mui/material";
+import { FormControl, InputLabel, MenuItem, Typography, Select, Box } from "@mui/material";
 import Keychain from "../../components/Keychain";
 
-export const glitterView = () => {
+export const GlitterView = () => {
     //const currentGlitter = useSelector((state) => state.glitter.glitterName)
     const dispatch = useDispatch()
     return (
@@ -15,7 +15,7 @@ export const glitterView = () => {
             id='Glitter-select'
             onChange={() => dispatch(selectedGlitter())}
             >
-                {Keychain.glitter.map((glitter) => {
+                {Keychain.glitter.map((glitter) => (
                     <MenuItem key={glitter.props.alt} value={glitter}>
                         <Box align='center'>
                             {glitter}
@@ -24,7 +24,7 @@ export const glitterView = () => {
                             </Typography>
                         </Box>
                     </MenuItem>
-                })}
+                ))}
             </Select>
         </FormControl>
     )

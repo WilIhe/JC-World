@@ -4,7 +4,7 @@ const initialState = {
     glitterName: '',
 }
 
-const glitterSlice = createSlice({
+const GlitterSlice = createSlice({
     name: 'glitter',
     initialState,
     reducers: {
@@ -14,5 +14,5 @@ const glitterSlice = createSlice({
     }
 }) 
 
-export default glitterSlice.reducer
-export const { selectedGlitter } = glitterSlice.actions
+export default GlitterSlice.reducer
+export const { selectedGlitter } = GlitterSlice.actions

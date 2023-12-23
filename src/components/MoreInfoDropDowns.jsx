@@ -1,37 +1,13 @@
 import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 import Keychain from "./Keychain";
 import { useState} from "react";
-import { glitterView } from "../features/glitter/glitterView";
-
+import { GlitterView } from "../features/glitter/glitterView";
 
 const MoreInfoDropDowns = () => {
 
     return(
         <Container>
-            <FormControl fullWidth>
-                <InputLabel id='select'>Glitter</InputLabel>
-                <Select
-                    labelId='Glitter-label'
-                    id='Glitter-select'
-                    // value={selectedGlitter}
-                    // onChange={handleChangeGlitter}
-                >
-                {/* <Grid container> */}
-                    {Keychain.glitter.map((glitter) =>
-                        // <Grid key={glitter} item xs={4}>
-                            <MenuItem key={glitter.props.alt} value={glitter}>
-                                <Box align='center'>
-                                    {glitter}
-                                    <Typography variant='body1'>
-                                        {glitter.props.alt}
-                                    </Typography>
-                                </Box>
-                            </MenuItem>
-                    // </Grid>
-                    )}
-                {/* </Grid> */}
-                </Select>
-            </FormControl>
+           <GlitterView />
 
             <FormControl fullWidth sx={{mt: 1}}>
                 <InputLabel id='select'>Letter</InputLabel>
