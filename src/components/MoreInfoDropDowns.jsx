@@ -2,6 +2,7 @@ import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Typogr
 import Keychain from "./Keychain";
 import { useState} from "react";
 import { GlitterView } from "../features/glitter/glitterView";
+import { LetterView } from "../features/letter/LetterView";
 
 const MoreInfoDropDowns = () => {
 
@@ -9,26 +10,7 @@ const MoreInfoDropDowns = () => {
         <Container>
            <GlitterView />
 
-            <FormControl fullWidth sx={{mt: 1}}>
-                <InputLabel id='select'>Letter</InputLabel>
-                <Select
-                    labelId='Letter-label'
-                    id='Letter-select'
-                    label='Letter'
-                    // value={selectedLetter}
-                    // onChange={handleChangeLetter}
-                >
-                {/* <Grid container> */}
-                    {Keychain.letter.map((letter) =>
-                        // <Grid key={letter} item xs={4}>
-                            <MenuItem key={letter} value={letter}>
-                                {letter}
-                            </MenuItem>
-                    // </Grid>
-                    )}
-                {/* </Grid> */}              
-                </Select>
-            </FormControl>
+            <LetterView />
 
 
             <FormControl fullWidth sx={{mt: 1}}>
