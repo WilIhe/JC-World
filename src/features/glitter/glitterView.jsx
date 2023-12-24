@@ -13,7 +13,7 @@ export const GlitterView = () => {
             <Select
             labelId='Glitter-label'
             id='Glitter-select'
-            onChange={() => dispatch(selectedGlitter())}
+            onChange={(event) => dispatch(selectedGlitter(event.target.value))}
             >
                 {Keychain.glitter.map((glitter) => (
                     <MenuItem key={glitter.props.alt} value={glitter}>
