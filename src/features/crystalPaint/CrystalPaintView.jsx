@@ -14,7 +14,7 @@ export const CrystalPaintView = () => {
                     id='CrystalPaint-select'
                     label='CrystalPaint'
                     // value={selectedCrystalPaint}
-                    onChange={() => dispatch(selectedCrystalPaint())}
+                    onChange={(event) => dispatch(selectedCrystalPaint(event.target.value))}
                 >
                 {/* <Grid container> */}
                     {Keychain.crystals_and_paint.map((CrystalPaint) =>

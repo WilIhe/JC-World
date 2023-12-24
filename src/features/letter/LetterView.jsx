@@ -14,7 +14,7 @@ export const LetterView = () => {
                     id='Letter-select'
                     label='Letter'
                     // value={selectedLetter}
-                    onChange={() => dispatch(selectedLetter())}
+                    onChange={(event) => dispatch(selectedLetter(event.target.value))}
                 >
                 {/* <Grid container> */}
                     {Keychain.letter.map((letter) =>

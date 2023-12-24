@@ -14,7 +14,7 @@ export const CloudFallView = () => {
                     id='CloudFall-select'
                     label='CloudFall'
                     // value={selectedCloudFall}
-                    onChange={() => dispatch(selectedCloudFall())}
+                    onChange={(event) => dispatch(selectedCloudFall(event.target.value))}
                 >
                 {/* <Grid container> */}
                     {Keychain.cloud_fall_glitter.map((CloudFall) =>
