@@ -3,6 +3,8 @@ import { ShoppingCart } from "@mui/icons-material";
 import { AppBar, Box, Toolbar, Typography, Badge, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 // import { useSharedState } from "./SharedStatesContext";
+import { useSelector } from "react-redux";
+
 
 
 const StyledToolbar = styled(Toolbar)({
@@ -20,9 +22,7 @@ const StyledImage = styled('img')({
 
 
 const Header = () => {
-
-    // const { sharedState } = useSharedState();
-    // const cartCount = sharedState.cartCount;
+    const itemNum = useSelector((state) => state.cart.cartCount)
 
     return (
     <Box sx={{flexGrow: '1'}}>
@@ -35,7 +35,7 @@ const Header = () => {
                     </Typography>
                 </Box>
                 <IconButton component={Link} to='/CartPage'>
-                    <Badge badgeContent={10}>
+                    <Badge badgeContent={itemNum}>
                         <ShoppingCart sx={{color:'purple'}} />
                     </Badge>
                 </IconButton>

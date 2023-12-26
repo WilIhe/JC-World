@@ -1,4 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { selectedGlitter } from "../glitter/glitterSlice";
+import { selectedLetter } from "../letter/LetterSlice";
+import { selectedCrystalPaint } from "../crystalPaint/CrystalPaintSlice";
+import { selectedCloudFall } from "../cloudFall/CloudFallSlice";
+import { add as keychainAdded } from "../Cart/CartSlice";
 
 const initialState = {
     glitter: '',
@@ -10,21 +15,15 @@ const initialState = {
 const ItemSlice = createSlice({
     name: 'keychain',
     initialState,
-    reducers: {
-        selectedGlitter: (state, action) => {
-            state.glitter = action.payload
-        },
-        selectedLetter: (state, action) => {
-            state.letter = action.payload
-        },
-        selectedCrystalPaint: (state, action) => {
-            state.crystalPaint = action.payload
-        },
-        selectedCloudFall: (state, action) => {
-            state.cloudFall = action.payload
-        }
+    extraReducers: (builder) => {
+        builder.addCase(keychainAdded, state => {
+            state.glitter = selectedGlitter,
+            state.letter = selectedLetter,
+            state.crystalPaint = selectedCrystalPaint,
+            state.cloudFall = selectedCloudFall
+        })
     }
 })
 
 export default ItemSlice.reducer
-export const { selectedGlitter, selectedLetter, selectedCrystalPaint, selectedCloudFall } = ItemSlice.actions
+//export const { currentGlitter, currentLetter, currentCrystalPaint, currentCloudFall } = ItemSlice.actions

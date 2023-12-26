@@ -4,14 +4,16 @@ import GlitterReducer from '../features/glitter/glitterSlice'
 import LetterReducer from '../features/letter/LetterSlice'
 import CrystalPaintReducer from "../features/crystalPaint/CrystalPaintSlice";
 import CloudFallReducer from "../features/cloudFall/CloudFallSlice";
+import CartReducer from "../features/Cart/CartSlice";
 
 const store = configureStore({
     reducer: {
-        Item: ItemReducer,
+        item: ItemReducer,
         glitter: GlitterReducer,
-        Letter: LetterReducer,
-        Paint: CrystalPaintReducer,
-        Cloud: CloudFallReducer
+        letter: LetterReducer,
+        paint: CrystalPaintReducer,
+        cloud: CloudFallReducer,
+        cart: CartReducer,
     },
 
 })

@@ -3,18 +3,18 @@ import { StyledCard } from "./ContentStyles";
 import { StyledCardMedia } from "./ContentStyles";
 import { Clear } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-// import { useSharedState } from "./SharedStatesContext";
+import { useSelector } from "react-redux";
+import { add } from "../features/Cart/CartSlice";
 
 const CartItems = () => {
-    let items = [1, 2, 3, 4, 5, 6]
-    // const { sharedState, setSharedState } = useSharedState();
-    // const keyChainList = sharedState.KeychainList;
-    // const keyChainAdded = sharedState.ItemAdded;
+    const items = [1, 2, 3, 4, 5, 6]
+    const currentGlitter = useSelector((state) => state.item.glitter)
+    const currentLetter = useSelector((state) => state.item.letter)
+    const currentPaint = useSelector((state) => state.item.crystalPaint)
+    const currentCloud = useSelector((state) => state.item.cloudFall)
 
-    // const updatedSharedState = {
-    //     ...sharedState,
-    //     ItemAdded: false
-    // };
+
+
 
 
     //The keycahinlist is only rendered once, hence why there is an issue with adding new items to the list and displaying it.
@@ -23,20 +23,32 @@ const CartItems = () => {
             <Stack direction='row' spacing={2} justifyContent='space-between'>
                 <Box flex={2} sx={{bgcolor: 'red'}}>
                     <Grid container spacing={2}>
-                        //This map needs to be conditionally rendered
                         {/* {keyChainAdded === true ? handleChange :  setSharedState(updatedSharedState) } */}
-                        {/* {keyChainList.map((item, index) =>( */}
-                            <Grid item xs={12} sm={12} md={12}>
+                        { add() ? items.map((item) => (
+                            <Grid jey={item} item xs={12} sm={12} md={12}>
                                 <Paper>
                                     <IconButton>
                                         <Clear />
                                     </IconButton>
-                                    <Typography> Letter:  </Typography>
-                                    <Typography> Glitter:  </Typography>
-                                    <Typography> Crystals and Paint:  </Typography>
-                                    <Typography>   Cloud and Fall Glitter:  </Typography>
+                                    <Typography> Letter: {currentLetter} </Typography>
+                                    <Typography> Glitter: {currentGlitter} </Typography>
+                                    <Typography> Crystals and Paint: {currentPaint} </Typography>
+                                    <Typography>   Cloud and Fall Glitter: {currentCloud} </Typography>
                                 </Paper>
                             </Grid>
+                        )) : null }
+                        {/* {keyChainList.map((item, index) =>( */}
+                            {/* <Grid item xs={12} sm={12} md={12}>
+                                <Paper>
+                                    <IconButton>
+                                        <Clear />
+                                    </IconButton>
+                                    <Typography> Letter: {currentLetter} </Typography>
+                                    <Typography> Glitter: {currentGlitter} </Typography>
+                                    <Typography> Crystals and Paint: {currentPaint} </Typography>
+                                    <Typography>   Cloud and Fall Glitter: {currentCloud} </Typography>
+                                </Paper>
+                            </Grid> */}
                             {/* ))} */}
                     </Grid>
                 </Box>

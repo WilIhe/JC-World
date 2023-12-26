@@ -5,7 +5,7 @@ import { FormControl, InputLabel, MenuItem, Typography, Select, Box } from "@mui
 import Keychain from "../../components/Keychain";
 
 export const GlitterView = () => {
-    //const currentGlitter = useSelector((state) => state.glitter.glitterName)
+    // const currentGlitter = useSelector((state) => state.glitter.glitterName)
     const dispatch = useDispatch()
     return (
         <FormControl fullWidth>
