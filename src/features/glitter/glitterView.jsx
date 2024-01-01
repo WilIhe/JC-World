@@ -5,7 +5,7 @@ import { FormControl, InputLabel, MenuItem, Typography, Select, Box } from "@mui
 import Keychain from "../../components/Keychain";
 
 export const GlitterView = () => {
-    // const currentGlitter = useSelector((state) => state.glitter.glitterName)
+    const currentGlitter = useSelector((state) => state.glitter.glitterName)
     const dispatch = useDispatch()
     return (
         <FormControl fullWidth>
@@ -13,9 +13,11 @@ export const GlitterView = () => {
             <Select
             labelId='Glitter-label'
             id='Glitter-select'
+            value={currentGlitter}
             onChange={(event) => dispatch(selectedGlitter(event.target.value))}
             >
                 {Keychain.glitter.map((glitter) => (
+                    //change value to glitter.props.alt possibly
                     <MenuItem key={glitter.props.alt} value={glitter}>
                         <Box align='center'>
                             {glitter}

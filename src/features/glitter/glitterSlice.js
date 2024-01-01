@@ -9,7 +9,7 @@ const GlitterSlice = createSlice({
     initialState,
     reducers: {
         selectedGlitter: (state, action) => {
-            state.glitter = action.payload
+            state.glitterName = action.payload
         }
     }
 }) 

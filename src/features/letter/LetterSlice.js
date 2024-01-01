@@ -8,8 +8,8 @@ const LetterSlice = createSlice({
     name: 'letter',
     initialState,
     reducers: {
-        selectedLetter: (state, action) => {
-            state.Letter = action.payload
+        selectedLetter: (state, actions) => {
+            state.chosenLetter = actions.payload
         }
     } 
 })

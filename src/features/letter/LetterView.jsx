@@ -1,11 +1,14 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { selectedLetter } from "./LetterSlice";
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import Keychain from "../../components/Keychain";
 
+
 export const LetterView = () => {
     const dispatch = useDispatch()
+    const currentLetter = useSelector((state) => state.letter.chosenLetter )
+    //const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     return (
         <FormControl fullWidth sx={{mt: 1}}>
                 <InputLabel id='select'>Letter</InputLabel>
@@ -13,7 +16,7 @@ export const LetterView = () => {
                     labelId='Letter-label'
                     id='Letter-select'
                     label='Letter'
-                    // value={selectedLetter}
+                    value={currentLetter}
                     onChange={(event) => dispatch(selectedLetter(event.target.value))}
                 >
                 {/* <Grid container> */}

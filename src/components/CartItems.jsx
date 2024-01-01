@@ -8,10 +8,10 @@ import { add } from "../features/Cart/CartSlice";
 
 const CartItems = () => {
     const items = [1, 2, 3, 4, 5, 6]
-    const currentGlitter = useSelector((state) => state.item.glitter)
-    const currentLetter = useSelector((state) => state.item.letter)
-    const currentPaint = useSelector((state) => state.item.crystalPaint)
-    const currentCloud = useSelector((state) => state.item.cloudFall)
+    // const currentGlitter = useSelector((state) => state.glitter.glitterName)
+    const currentLetter = useSelector((state) => state.letter.chosenLetter)
+    // const currentPaint = useSelector((state) => state.item.crystalPaint)
+    // const currentCloud = useSelector((state) => state.item.cloudFall)
 
 
 
@@ -24,19 +24,19 @@ const CartItems = () => {
                 <Box flex={2} sx={{bgcolor: 'red'}}>
                     <Grid container spacing={2}>
                         {/* {keyChainAdded === true ? handleChange :  setSharedState(updatedSharedState) } */}
-                        { add() ? items.map((item) => (
-                            <Grid jey={item} item xs={12} sm={12} md={12}>
+                        {/* { add() ? items.map((item) => ( */}
+                            <Grid item xs={12} sm={12} md={12}>
                                 <Paper>
                                     <IconButton>
                                         <Clear />
                                     </IconButton>
                                     <Typography> Letter: {currentLetter} </Typography>
-                                    <Typography> Glitter: {currentGlitter} </Typography>
-                                    <Typography> Crystals and Paint: {currentPaint} </Typography>
-                                    <Typography>   Cloud and Fall Glitter: {currentCloud} </Typography>
+                                    {/* <Typography> Glitter:  </Typography> */}
+                                    {/* <Typography> Crystals and Paint: {currentPaint} </Typography>
+                                    <Typography>   Cloud and Fall Glitter: {currentCloud} </Typography> */}
                                 </Paper>
                             </Grid>
-                        )) : null }
+                        {/* // )) : null } */}
                         {/* {keyChainList.map((item, index) =>( */}
                             {/* <Grid item xs={12} sm={12} md={12}>
                                 <Paper>

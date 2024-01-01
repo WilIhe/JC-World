@@ -1,5 +1,5 @@
 import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from "@mui/material";
-import Keychain from "./Keychain";
+//import Keychain from "./Keychain";
 import { useState} from "react";
 import { GlitterView } from "../features/glitter/glitterView";
 import { LetterView } from "../features/letter/LetterView";
@@ -10,11 +10,10 @@ const MoreInfoDropDowns = () => {
 
     return(
         <Container>
-           <GlitterView />
-
+            <GlitterView />
             <LetterView />
-            <CrystalPaintView />
-            <CloudFallView />
+            {/* <CrystalPaintView />
+            <CloudFallView /> */}
             
 
            
