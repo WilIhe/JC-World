@@ -8,10 +8,10 @@ import { add } from "../features/Cart/CartSlice";
 
 const CartItems = () => {
     const items = [1, 2, 3, 4, 5, 6]
-    // const currentGlitter = useSelector((state) => state.glitter.glitterName)
+    const currentGlitter = useSelector((state) => state.glitter.glitterName)
     const currentLetter = useSelector((state) => state.letter.chosenLetter)
-    // const currentPaint = useSelector((state) => state.item.crystalPaint)
-    // const currentCloud = useSelector((state) => state.item.cloudFall)
+    const currentPaint = useSelector((state) => state.paint.chosenCrystalPaint)
+    const currentCloud = useSelector((state) => state.cloud.chosenCloudFall)
 
 
 
@@ -31,9 +31,9 @@ const CartItems = () => {
                                         <Clear />
                                     </IconButton>
                                     <Typography> Letter: {currentLetter} </Typography>
-                                    {/* <Typography> Glitter:  </Typography> */}
-                                    {/* <Typography> Crystals and Paint: {currentPaint} </Typography>
-                                    <Typography>   Cloud and Fall Glitter: {currentCloud} </Typography> */}
+                                    <Typography> Glitter: {currentGlitter} </Typography>
+                                    <Typography> Crystals and Paint: {currentPaint} </Typography>
+                                    <Typography>   Cloud and Fall Glitter: {currentCloud} </Typography>
                                 </Paper>
                             </Grid>
                         {/* // )) : null } */}
