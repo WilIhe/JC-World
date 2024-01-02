@@ -18,7 +18,7 @@ export const GlitterView = () => {
             >
                 {Keychain.glitter.map((glitter) => (
                     //change value to glitter.props.alt possibly
-                    <MenuItem key={glitter.props.alt} value={glitter}>
+                    <MenuItem key={glitter.props.alt} value={glitter.props.alt}>
                         <Box align='center'>
                             {glitter}
                             <Typography variant='body1'>
