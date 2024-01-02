@@ -9,7 +9,7 @@ const CloudFallSlice = createSlice({
     initialState,
     reducers: {
         selectedCloudFall: (state, action) => {
-            state.glitter = action.payload
+            state.chosenCloudFall = action.payload
         }
     }
 }) 

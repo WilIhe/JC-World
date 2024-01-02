@@ -12,8 +12,8 @@ const MoreInfoDropDowns = () => {
         <Container>
             <GlitterView />
             <LetterView />
-            {/* <CrystalPaintView />
-            <CloudFallView /> */}
+            {/* <CrystalPaintView /> */}
+            <CloudFallView />
             
 
            
