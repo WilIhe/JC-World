@@ -9,10 +9,10 @@ const CrystalPaintSlice = createSlice({
     initialState,
     reducers: {
         selectedCrystalPaint: (state, action) => {
-            state.crystalPaint = action.payload
+            state.chosenCrystalPaint = action.payload
         }
     }
-}) 
+})  
 
 export default CrystalPaintSlice.reducer
 export const { selectedCrystalPaint } = CrystalPaintSlice.actions
