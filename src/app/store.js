@@ -8,7 +8,7 @@ import CartReducer from "../features/Cart/CartSlice";
 
 const store = configureStore({
     reducer: {
-        // item: ItemReducer,
+        item: ItemReducer,
         glitter: GlitterReducer,
         letter: LetterReducer,
         paint: CrystalPaintReducer,

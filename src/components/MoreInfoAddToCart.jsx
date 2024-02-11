@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Box, Button, Grid } from "@mui/material";
 import { add } from "../features/Cart/CartSlice";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { useState } from "react";
 
 const StyledDiv = styled('div')({
@@ -11,12 +11,36 @@ const StyledDiv = styled('div')({
 });
 
 const MoreInfoAddToCart = () => {
+    const [ItemList, setItemList] = useState([])
     const dispatch = useDispatch()
     const [count, setCount] = useState(0)
+    // const chosenGlitter = useSelector((state) => state.keychain.selectedGlitter)
+    // const chosenLetter = useSelector((state) => state.keychain.selectedLetter)
+    // const chosenCrystalPaint = useSelector((state) => state.keychain.selectedCrystalPaint)
+    // const chosenCloudFall = useSelector((state) => state.keychain.selectedCloudFall)
+
+    
+    const createNewItem = () => {
+        const letter = useSelector((state) => state.keychain.selectedLetter)
+        // const glitter = useSelector((state) => state.keychain.selectedGlitter)
+        // const cloud = useSelector((state) => state.keychain.selectedCloudFall)
+        // const paint = useSelector((state) => state.keychain.selectedCrystalPaint)
+
+        return {
+            letter,
+            // glitter,
+            // cloud,
+            // paint,
+        };
+    }
 
     const handleClick = () => {
+        //const newItem = createNewItem()
+
         dispatch(add())
         setCount(count + 1)
+        // setItemList(prevState => [...prevState, newItem])
+        // {console.log(ItemList)}
     }
     return(
         <StyledDiv>

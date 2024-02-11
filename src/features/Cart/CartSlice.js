@@ -10,6 +10,7 @@ const CartSlice = createSlice({
     reducers: {
         add: state => {
             state.cartCount++
+            
         },
         remove: state => {
             state.cartCount--
